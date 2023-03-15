@@ -13,11 +13,12 @@ A Vite template for React, TypeScript and the latest major version of MUI.
 
 ## Demo
 
-<img src='./screen-shots/demo.png' />
+<img src='./screen-shots/screenshot-vite-fas-react.png' />
 
 ## Getting Started
 
-- Clone the repo, `git clone https://github.com/christopher-caldwell/vite-material-ui.git`, or use the "Use this template" button at the top of this page.
+- Clone the repo, `https://github.com/nirzafran/vite-font-awesome-react-poc`
+  - Original repo was cloned from `git clone https://github.com/christopher-caldwell/vite-material-ui.git`
 - Install dependencies using `yarn`
 - Start the server with `yarn dev`
 
