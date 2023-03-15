@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { Link, Slider, styled, SvgIcon } from '@mui/material'
 import LocalPoliceIcon from '@mui/icons-material/LocalPolice';
 import { AccessAlarm, ThreeDRotation } from '@mui/icons-material';
+import Icon from '@mui/material/Icon';
 
 
 import Header from '@/header'
@@ -22,9 +23,14 @@ const App: FC = () => {
       </div>
     </Root>
     <footer style={{display: "block"}}>
+      <div className='svgIcons'>
         <SvgIcon component={LocalPoliceIcon} style={{color: "red", fontSize: "5rem"}} />
         <SvgIcon component={AccessAlarm} style={{color: "blue", fontSize: "5rem"}} />
         <SvgIcon component={ThreeDRotation} style={{color: "green", fontSize: "5rem"}} />
+      </div>
+      <div className='fontIcons'>
+        <Icon>star</Icon>
+      </div>
       </footer>
     </div>
   )
