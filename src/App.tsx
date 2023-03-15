@@ -1,10 +1,12 @@
 import { FC } from 'react'
-import { Link, Slider, styled } from '@mui/material'
+import { Link, Slider, styled, SvgIcon } from '@mui/material'
+import LocalPoliceIcon from '@mui/icons-material/LocalPolice';
 
 import Header from '@/header'
 
 const App: FC = () => {
   return (
+    <div>
     <Root>
       <Header />
       <div>
@@ -17,6 +19,10 @@ const App: FC = () => {
         <Slider />
       </div>
     </Root>
+    <footer style={{display: "block"}}>
+        <SvgIcon component={LocalPoliceIcon} style={{color: "red", fontSize: "5rem"}} />
+      </footer>
+    </div>
   )
 }
 
