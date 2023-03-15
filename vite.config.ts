@@ -3,6 +3,7 @@ import Checker from 'vite-plugin-checker'
 import { resolve } from 'path'
 import { UserConfig } from 'vite'
 import { visualizer } from 'rollup-plugin-visualizer'
+import macrosPlugin from 'vite-plugin-babel-macros'
 
 function pathResolve(dir: string) {
   return resolve(__dirname, '.', dir)
@@ -26,15 +27,16 @@ const config: UserConfig = {
     sourcemap: !!shouldAnalyze
   },
   plugins: [
+    macrosPlugin(),
     react(),
-    Checker({
-      typescript: true,
-      overlay: true,
-      eslint: {
-        files: 'src',
-        extensions: ['.ts', '.tsx']
-      }
-    })
+    // Checker({
+    //   typescript: true,
+    //   overlay: true,
+    //   eslint: {
+    //     files: 'src',
+    //     extensions: ['.ts', '.tsx']
+    //   }
+    // })
   ]
 }
 

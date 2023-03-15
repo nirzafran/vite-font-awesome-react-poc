@@ -1,13 +1,24 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Link, Slider, styled, SvgIcon } from '@mui/material'
 import LocalPoliceIcon from '@mui/icons-material/LocalPolice';
 import { AccessAlarm, ThreeDRotation } from '@mui/icons-material';
 import Icon from '@mui/material/Icon';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+
 
 import Header from '@/header'
 
 const App: FC = () => {
+
+  const [value, setValue] = useState<number | number[]>(5)
+  const [fontSize, setFontSize] = useState<string>(value + "rem")
+
+  useEffect(() => {
+    setFontSize(value + "rem")
+  }, [value])
+
   return (
     <div>
     <Root>
@@ -19,17 +30,23 @@ const App: FC = () => {
             Vite?
           </Link>
         </h2>
-        <Slider />
+        <Slider value={value} min={1} max={10} step={1} onChange={(e: any) => setValue(parseInt(e?.target?.value || '5', 10))} />
       </div>
     </Root>
     <footer style={{display: "block"}}>
       <div className='svgIcons'>
-        <SvgIcon component={LocalPoliceIcon} style={{color: "red", fontSize: "5rem"}} />
-        <SvgIcon component={AccessAlarm} style={{color: "blue", fontSize: "5rem"}} />
-        <SvgIcon component={ThreeDRotation} style={{color: "green", fontSize: "5rem"}} />
+        <SvgIcon component={LocalPoliceIcon} style={{color: "red", fontSize}} />
+        <SvgIcon component={AccessAlarm} style={{color: "blue", fontSize}} />
+        <SvgIcon component={ThreeDRotation} style={{color: "green", fontSize}} />
       </div>
       <div className='fontIcons'>
         <Icon>star</Icon>
+      </div>
+      <div className="fas">
+        <FontAwesomeIcon icon={solid('user-secret')} style={{fontSize}} />
+        <FontAwesomeIcon icon={icon({name: 'coffee', style: 'solid'})} style={{fontSize}} />
+        {/* <FontAwesomeIcon icon={regular('coffee')} /> */}
+        {/* <FontAwesomeIcon icon={brands('twitter')} /> */}
       </div>
       </footer>
     </div>
