@@ -1,6 +1,8 @@
 import { FC } from 'react'
 import { Link, Slider, styled, SvgIcon } from '@mui/material'
 import LocalPoliceIcon from '@mui/icons-material/LocalPolice';
+import { AccessAlarm, ThreeDRotation } from '@mui/icons-material';
+
 
 import Header from '@/header'
 
@@ -21,6 +23,8 @@ const App: FC = () => {
     </Root>
     <footer style={{display: "block"}}>
         <SvgIcon component={LocalPoliceIcon} style={{color: "red", fontSize: "5rem"}} />
+        <SvgIcon component={AccessAlarm} style={{color: "blue", fontSize: "5rem"}} />
+        <SvgIcon component={ThreeDRotation} style={{color: "green", fontSize: "5rem"}} />
       </footer>
     </div>
   )
