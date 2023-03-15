@@ -5,7 +5,7 @@ import { AccessAlarm, ThreeDRotation } from '@mui/icons-material';
 import Icon from '@mui/material/Icon';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+import { solid, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 
 
 import Header from '@/header'
@@ -45,8 +45,7 @@ const App: FC = () => {
       <div className="fas">
         <FontAwesomeIcon icon={solid('user-secret')} style={{fontSize}} />
         <FontAwesomeIcon icon={icon({name: 'coffee', style: 'solid'})} style={{fontSize}} />
-        {/* <FontAwesomeIcon icon={regular('coffee')} /> */}
-        {/* <FontAwesomeIcon icon={brands('twitter')} /> */}
+        <FontAwesomeIcon icon={brands('twitter')} style={{fontSize}} color="maroon" />
       </div>
       </footer>
     </div>
@@ -56,7 +55,7 @@ const App: FC = () => {
 const Root = styled('div')`
   padding: 1% 2% 10vh 2%;
   width: 100%;
-  min-height: 95vh;
+  min-height: 75vh;
   display: flex;
   justify-content: center;
   align-items: center;
